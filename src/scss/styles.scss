@@ -1,0 +1,202 @@
+@import "components/fonts";
+@import "components/mixins";
+@import "components/header";
+@import "components/clock";
+@import "components/users";
+
+
+.App-wrapper {
+  display: grid;
+  grid-template-areas: "h h"
+                       "c c";
+  grid-template-rows: 130px 1fr;
+  grid-template-columns: 3fr 7fr;
+  grid-gap: 10px;
+  height: 100%;
+  background: url("https://oir.mobi/uploads/posts/2021-01/1611923805_35-p-kartinki-na-zadnii-fon-36.jpg") center no-repeat;
+  background-size: cover;
+
+}
+
+.container {
+  width: calc(100vw - 250px);
+  margin: 0 auto;
+ }
+
+
+.main-content {
+  grid-area: c;
+  display: flex;
+  background: rgba(255, 255, 255, 0.6);
+
+  .aside {
+    margin: 20px 0 20px 20px;
+
+    .aside-menu {
+      margin-bottom: 50px;
+      background: rgba(0, 0 , 0 , 0.35);
+      padding: 20px;
+      div {
+        margin-bottom: 10px;
+        a {
+          color: white;
+          font: 600 20px/24px sans-serif;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+      .fined-users {
+        margin-top: 50px;
+      }
+    }
+    .clock {
+      background: rgba(0, 0 , 0 , 0.35);
+      padding: 20px;
+    }
+  }
+
+  .wrapper-content {
+    margin: 20px;
+    flex-grow: 1;
+    min-height: 100vh;
+    height: auto;
+    .wrapper-profile-info {
+      h3 {
+        color: #332818;
+        font: 600 32px/40px sans-serif;
+        font-family: 'Parisienne', cursive;
+        font-size: 50px;
+        text-align: center;
+        margin: 0;
+      }
+      .main-profile-info {
+        display: flex;
+        flex-direction: row-reverse;
+        background: rgba(0, 0 , 0 , 0.35);
+        padding: 30px 15px 30px 30px;
+
+        @media only screen and (max-width: 1145px) {
+          flex-direction: column;
+        }
+
+        .avatar {
+          width: 250px;
+          height: 250px;
+          overflow: hidden;
+          border-radius: 125px;
+
+          @media only screen and (max-width: 1390px) {
+            flex-grow: 1;
+          }
+
+          @media only screen and (max-width: 1215px) {
+            width: 180px;
+            height: 180px;
+          }
+
+          @media only screen and (max-width: 1145px) {
+            margin-bottom: 15px;
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .profile-info-text {
+          margin-right: 20px;
+          flex-grow: 1;
+
+          @media only screen and (max-width: 1390px) {
+            width: calc(100% - 250px - 25px);
+          }
+
+          @media only screen and (max-width: 1215px) {
+            width: calc(100% - 180px - 25px);
+          }
+
+          @media only screen and (max-width: 1145px) {
+            width: 100%;
+          }
+
+          .profile-name {
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-family: 'Knewave', cursive;
+            text-align: left;
+            margin-bottom: 20px;
+          }
+          .profile-slogan {
+            font-family: 'Homemade Apple', cursive;
+            text-align: justify;
+          }
+        }
+      }
+      .main-profile-posts {
+        h3 {
+          margin-top: 30px;
+        }
+        .post-actions {
+          display: flex;
+          justify-content: center;
+          margin: 25px 0;
+
+          button {
+            @include button;
+          }
+
+        }
+
+        .post-item {
+          background: rgba(0, 0 , 0 , 0.35);
+          padding: 30px;
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          .post-like {
+            margin-top: 10px;
+            &:before {
+              margin-right: 10px;
+            }
+
+          }
+        }
+      }
+    }
+    .dialogs-page {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      .dialogs-items {
+        width: 30%;
+        padding: 10px;
+        background: rgba(0, 0 , 0 , 0.35);
+        .dialog {
+          @include button2;
+        }
+      }
+      .messages-block {
+        flex-grow: 1;
+        padding: 10px;
+        background: rgba(0, 0 , 0 , 0.35);
+        margin-left: 20px;
+        .message {
+          padding: 20px;
+          border: 2px solid wheat;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        }
+        .new-message {
+          display: flex;
+          button {
+            @include button;
+          }
+        }
+
+      }
+    }
+  }
+}
+

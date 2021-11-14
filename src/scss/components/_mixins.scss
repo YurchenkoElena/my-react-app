@@ -1,0 +1,50 @@
+@mixin button {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  background: rgba(0, 0 , 0 , 0.35);
+  text-transform: uppercase;
+  padding: 0 15px;
+  font-weight: 600;
+  font-size: 22px;
+
+  &:before {
+    content: '+';
+    font-size: 40px;
+    margin-right: 15px;
+  }
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+    &:before {
+      color: white;
+    }
+  }
+}
+
+@mixin button2 {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    background: rgba(0, 0 , 0 , 0.55);
+    letter-spacing: 0.1rem;
+    box-shadow: 0 0 8px rgb(234, 161, 53);
+    transform: scale(1);
+    transition: all 0.2s;
+    border-radius: 10px;
+    color: wheat;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+
+    &:hover{
+      background: #ce8c29;
+      transform: scale(1.05);
+    }
+}
