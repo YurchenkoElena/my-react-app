@@ -1,6 +1,7 @@
 //create action type
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
     posts : [
@@ -8,7 +9,8 @@ let initialState = {
         {id: 2, postTitle: 'What Jay Leno would say about All Things In The World', postBody: 'WebFX has been a pleasure to work with on our SEO needs and I look forward to working with them on future projects.', likeCount: '5'},
         {id: 3, postTitle: 'Essential Tips for All Things In The World', postBody: 'Ready to grow with a digital marketing agency you can trust? ', likeCount: '11'},
     ],
-    newPostText : 'Add new post here'
+    newPostText : 'Add new post here',
+    profile: null
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -31,6 +33,12 @@ const profileReducer = (state = initialState, action) => {
                 newPostText: action.newText
             };
         }
+        case SET_USER_PROFILE: {
+            return {
+                ...state,
+                profile: action.profile
+            }
+        }
         default:
             return state;
     }
@@ -39,5 +47,6 @@ const profileReducer = (state = initialState, action) => {
 //action creators
 export const addPostActionCreator = () => ({ type: ADD_POST });
 export const updateNewPostActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
+export const setUserProfileAC = (profile) => ({type: SET_USER_PROFILE, profile});
 
 export default profileReducer;

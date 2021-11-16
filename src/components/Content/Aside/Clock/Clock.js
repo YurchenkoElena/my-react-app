@@ -1,39 +1,25 @@
 import React from "react";
 
-const Clock = () => {
-
-        // const deg = 6;
-        // const hr = document.querySelector('#hr');
-        // const mn = document.querySelector('#mn');
-        // const sc = document.querySelector('#sc');
-        //
-        // setInterval(() => {
-        //     let day = new Date();
-        //     let hh = day.getHours() * 30;
-        //     let mm = day.getMinutes() * deg;
-        //     let ss = day.getSeconds() * deg;
-        //
-        //     hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
-        //     mn.style.transform = `rotateZ(${mm}deg)`;
-        //     sc.style.transform = `rotateZ(${ss}deg)`;
-        // })
+const Clock = (props) => {
 
     return (
         <div className="clock">
             <div className="hour">
-                <div className="hr" id="hr"></div>
+                {/*<div className="hr" id="hr" ref={hr} style={{stylesHr}}> </div>*/}
+                <div className="hr" id="hr" style={{transform: `${props.hour}`}}></div>
+                {/*<ClockHour styleHr={stylesHr} />*/}
             </div>
             <div className="min">
-                <div className="mn" id="mn"></div>
+                {/*<div className="mn" id="mn" ref={mn} style={{stylesMn}}> </div>*/}
+                <div className="mn" id="mn" style={{transform: `${props.minute}`}}></div>
             </div>
             <div className="sec">
-                <div className="sc" id="sc"></div>
+                {/*<div className="sc" id="sc" ref={sc} style={{stylesSc}}> </div>*/}
+                <div className="sc" id="sc" style={{transform: `${props.second}`}}></div>
             </div>
         </div>
-    );
+    )
 
 }
-
-
 
 export default Clock;

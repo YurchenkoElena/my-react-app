@@ -164,6 +164,18 @@
   z-index: 12;
   border-radius: 6px 6px 0 0; }
 
+.preloader {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 275px;
+  z-index: 200;
+  left: calc(50% - 100px);
+  border-radius: 150px; }
+
+.wrapper-content {
+  position: relative; }
+
 .users-list {
   display: flex;
   flex-direction: column;
@@ -261,6 +273,137 @@
     .users-list button.add-users:before {
       content: ''; }
 
+.wrapper-profile-info h3 {
+  color: #332818;
+  font: 600 32px/40px sans-serif;
+  font-family: 'Parisienne', cursive;
+  font-size: 50px;
+  text-align: center;
+  margin: 0; }
+.wrapper-profile-info .main-profile-info {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 30px 15px 30px 30px; }
+  @media only screen and (max-width: 1215px) {
+    .wrapper-profile-info .main-profile-info {
+      align-items: start; } }
+  @media only screen and (max-width: 1145px) {
+    .wrapper-profile-info .main-profile-info {
+      flex-direction: column; } }
+  .wrapper-profile-info .main-profile-info .avatar {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 125px; }
+    @media only screen and (max-width: 1390px) {
+      .wrapper-profile-info .main-profile-info .avatar {
+        flex-grow: 1; } }
+    @media only screen and (max-width: 1215px) {
+      .wrapper-profile-info .main-profile-info .avatar {
+        width: 180px;
+        height: 180px; } }
+    @media only screen and (max-width: 1145px) {
+      .wrapper-profile-info .main-profile-info .avatar {
+        margin-bottom: 15px; } }
+    .wrapper-profile-info .main-profile-info .avatar img {
+      width: auto;
+      max-height: 100%; }
+  .wrapper-profile-info .main-profile-info .profile-info-text {
+    margin-right: 20px;
+    flex-grow: 1; }
+    @media only screen and (max-width: 1390px) {
+      .wrapper-profile-info .main-profile-info .profile-info-text {
+        width: calc(100% - 250px - 25px); } }
+    @media only screen and (max-width: 1215px) {
+      .wrapper-profile-info .main-profile-info .profile-info-text {
+        width: calc(100% - 180px - 25px); } }
+    @media only screen and (max-width: 1145px) {
+      .wrapper-profile-info .main-profile-info .profile-info-text {
+        width: 100%; } }
+    .wrapper-profile-info .main-profile-info .profile-info-text .profile-name {
+      font-size: 28px;
+      letter-spacing: 2px;
+      font-family: 'Knewave', cursive;
+      text-align: left;
+      margin-bottom: 20px; }
+    .wrapper-profile-info .main-profile-info .profile-info-text .profile-slogan {
+      font-family: 'Homemade Apple', cursive;
+      text-align: justify; }
+    .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts {
+      margin-top: 20px; }
+      .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts h4 {
+        font: 500 28px/30px 'Knewave', cursive;
+        margin-bottom: 20px; }
+      .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts a {
+        margin-right: 30px; }
+        .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts a.instagram {
+          width: 70px;
+          height: 70px;
+          content: url("../images/Social Icons by Dreamstale (33).png"); }
+        .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts a.facebook {
+          width: 70px;
+          height: 70px;
+          content: url("../images/Social Icons by Dreamstale (6).png"); }
+        .wrapper-profile-info .main-profile-info .profile-info-text .profile-contacts a.twitter {
+          width: 70px;
+          height: 70px;
+          content: url("../images/Social Icons by Dreamstale (5).png"); }
+.wrapper-profile-info .main-profile-posts h3 {
+  margin-top: 30px; }
+.wrapper-profile-info .main-profile-posts .post-actions {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0; }
+  .wrapper-profile-info .main-profile-posts .post-actions button {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    background: rgba(0, 0, 0, 0.35);
+    text-transform: uppercase;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 22px; }
+    .wrapper-profile-info .main-profile-posts .post-actions button:before {
+      content: '+';
+      font-size: 40px;
+      margin-right: 15px; }
+    .wrapper-profile-info .main-profile-posts .post-actions button:hover {
+      color: white;
+      cursor: pointer; }
+      .wrapper-profile-info .main-profile-posts .post-actions button:hover:before {
+        color: white; }
+.wrapper-profile-info .main-profile-posts .post-item {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 30px;
+  margin-bottom: 20px; }
+  .wrapper-profile-info .main-profile-posts .post-item:last-of-type {
+    margin-bottom: 0; }
+  .wrapper-profile-info .main-profile-posts .post-item .post-like {
+    margin-top: 10px; }
+    .wrapper-profile-info .main-profile-posts .post-item .post-like:before {
+      margin-right: 10px; }
+
+.cites-wrapper {
+  width: calc(100% - 40px);
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  border: 2px solid wheat;
+  padding: 15px;
+  color: white; }
+  .cites-wrapper h4 {
+    margin-top: 0;
+    text-transform: uppercase;
+    text-align: center; }
+  .cites-wrapper .cites-text {
+    font: 400 18px/20px 'Homemade Apple', cursive;
+    letter-spacing: 2px;
+    line-height: 35px; }
+  .cites-wrapper .cites-author {
+    text-align: right; }
+
 .App-wrapper {
   display: grid;
   grid-template-areas: "h h" "c c";
@@ -268,7 +411,7 @@
   grid-template-columns: 3fr 7fr;
   grid-gap: 10px;
   height: 100%;
-  background: url("https://oir.mobi/uploads/posts/2021-01/1611923805_35-p-kartinki-na-zadnii-fon-36.jpg") center no-repeat;
+  background: url("../images/1586520432_3-p-kreativnie-foni-18.jpg") center no-repeat;
   background-size: cover; }
 
 .container {
@@ -280,8 +423,13 @@
   display: flex;
   background: rgba(255, 255, 255, 0.6); }
   .main-content .aside {
-    margin: 20px 0 20px 20px; }
+    width: 25%;
+    margin: 20px 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     .main-content .aside .aside-menu {
+      width: calc(100% - 40px);
       margin-bottom: 50px;
       background: rgba(0, 0, 0, 0.35);
       padding: 20px; }
@@ -298,106 +446,20 @@
       background: rgba(0, 0, 0, 0.35);
       padding: 20px; }
   .main-content .wrapper-content {
+    width: calc(100% - 25% - 20px);
     margin: 20px;
-    flex-grow: 1;
     min-height: 100vh;
     height: auto; }
-    .main-content .wrapper-content .wrapper-profile-info h3 {
-      color: #332818;
-      font: 600 32px/40px sans-serif;
-      font-family: 'Parisienne', cursive;
-      font-size: 50px;
-      text-align: center;
-      margin: 0; }
-    .main-content .wrapper-content .wrapper-profile-info .main-profile-info {
-      display: flex;
-      flex-direction: row-reverse;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 30px 15px 30px 30px; }
-      @media only screen and (max-width: 1145px) {
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-info {
-          flex-direction: column; } }
-      .main-content .wrapper-content .wrapper-profile-info .main-profile-info .avatar {
-        width: 250px;
-        height: 250px;
-        overflow: hidden;
-        border-radius: 125px; }
-        @media only screen and (max-width: 1390px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .avatar {
-            flex-grow: 1; } }
-        @media only screen and (max-width: 1215px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .avatar {
-            width: 180px;
-            height: 180px; } }
-        @media only screen and (max-width: 1145px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .avatar {
-            margin-bottom: 15px; } }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-info .avatar img {
-          width: 100%;
-          height: auto; }
-      .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text {
-        margin-right: 20px;
-        flex-grow: 1; }
-        @media only screen and (max-width: 1390px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text {
-            width: calc(100% - 250px - 25px); } }
-        @media only screen and (max-width: 1215px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text {
-            width: calc(100% - 180px - 25px); } }
-        @media only screen and (max-width: 1145px) {
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text {
-            width: 100%; } }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text .profile-name {
-          font-size: 28px;
-          letter-spacing: 2px;
-          font-family: 'Knewave', cursive;
-          text-align: left;
-          margin-bottom: 20px; }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-info .profile-info-text .profile-slogan {
-          font-family: 'Homemade Apple', cursive;
-          text-align: justify; }
-    .main-content .wrapper-content .wrapper-profile-info .main-profile-posts h3 {
-      margin-top: 30px; }
-    .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-actions {
-      display: flex;
-      justify-content: center;
-      margin: 25px 0; }
-      .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-actions button {
-        display: flex;
-        align-items: center;
-        margin-left: 50px;
-        background: rgba(0, 0, 0, 0.35);
-        text-transform: uppercase;
-        padding: 0 15px;
-        font-weight: 600;
-        font-size: 22px; }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-actions button:before {
-          content: '+';
-          font-size: 40px;
-          margin-right: 15px; }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-actions button:hover {
-          color: white;
-          cursor: pointer; }
-          .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-actions button:hover:before {
-            color: white; }
-    .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-item {
-      background: rgba(0, 0, 0, 0.35);
-      padding: 30px;
-      margin-bottom: 20px; }
-      .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-item:last-of-type {
-        margin-bottom: 0; }
-      .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-item .post-like {
-        margin-top: 10px; }
-        .main-content .wrapper-content .wrapper-profile-info .main-profile-posts .post-item .post-like:before {
-          margin-right: 10px; }
     .main-content .wrapper-content .dialogs-page {
       width: 100%;
       height: 100%;
-      display: flex; }
+      display: flex;
+      flex-direction: column; }
       .main-content .wrapper-content .dialogs-page .dialogs-items {
-        width: 30%;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.35); }
+        width: calc(100% - 20px);
+        padding: 20px 10px 0;
+        background: rgba(0, 0, 0, 0.35);
+        text-align: center; }
         .main-content .wrapper-content .dialogs-page .dialogs-items .dialog {
           margin-bottom: 10px;
           width: 100%;
@@ -416,22 +478,27 @@
           color: wheat;
           text-transform: uppercase;
           font-weight: 800;
-          text-decoration: none; }
+          text-decoration: none;
+          display: inline-block;
+          width: auto;
+          height: auto;
+          padding: 15px 25px;
+          margin-right: 25px; }
           .main-content .wrapper-content .dialogs-page .dialogs-items .dialog:hover {
             background: #ce8c29;
             transform: scale(1.05); }
       .main-content .wrapper-content .dialogs-page .messages-block {
         flex-grow: 1;
         padding: 10px;
-        background: rgba(0, 0, 0, 0.35);
-        margin-left: 20px; }
+        background: rgba(0, 0, 0, 0.35); }
         .main-content .wrapper-content .dialogs-page .messages-block .message {
           padding: 20px;
           border: 2px solid wheat;
           border-radius: 10px;
           margin-bottom: 20px; }
         .main-content .wrapper-content .dialogs-page .messages-block .new-message {
-          display: flex; }
+          display: flex;
+          justify-content: center; }
           .main-content .wrapper-content .dialogs-page .messages-block .new-message button {
             display: flex;
             align-items: center;

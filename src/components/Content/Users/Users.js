@@ -5,7 +5,8 @@ const Users = (props) => {
 
     let getUsers = () => {
         if (props.users.length <= 3) {
-            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            // axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+                axios.get("http://localhost:3004/users-api").then(response => {
                 console.log(response.data.items);
             });
             props.setUsers(

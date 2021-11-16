@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "aboutMe": "я крутой чувак 1001%",
+      "contacts": {
+            "facebook": "facebook.com",
+            "website": null,
+            "vk": "vk.com/egtre",
+            "twitter": "https://twitter.com/@sdf",
+            "instagram": "instagram.com/sds",
+            "youtube": null,
+            "github": "github.com",
+            "mainLink": null
+          },
+      "lookingForAJob": true,
+      "lookingForAJobDescription": "не ищу, а дурачусь",
+      "fullName": "samurai dimych",
+      "userId": 2,
+      "photos": {
+            "small": "https://social-network.samuraijs.com/activecontent/images/users/2/user-small.jpg?v=0",
+            "large": "https://social-network.samuraijs.com/activecontent/images/users/2/user.jpg?v=0"
+          }
+    },
+    {
+      "aboutMe": "This is my bio",
+      "contacts": {
+            "facebook": "facebook.com",
+            "website": null,
+            "vk": "vk.com/rhrth",
+            "twitter": "https://twitter.com/trhjtrjrj",
+            "instagram": "instagram.com/rjyrjry",
+            "youtube": null,
+            "github": "github.com",
+            "mainLink": null
+          },
+      "lookingForAJob": true,
+      "lookingForAJobDescription": "jfhjdkf rlfdjrhor rhpojhe hdojhd fn",
+      "fullName": "Minion Minionich",
+      "userId": 2,
+      "photos": {
+            "small": "http://andrey-eltsov.ru/wp-content/uploads/2017/09/ghjunyhgfg87654kjngvd-bkmijrfd04532lkijtgr-hbedkuj73982jhbgvf-a-a-kotik-edinorozhek-edinorog-ava2ap.jpg",
+            "large": "https://social-network.samuraijs.com/activecontent/images/users/2/user.jpg?v=0"
+          }
+    }
+  ],
+  "totalCount": 2,
+  "error": null
+}

@@ -1,0 +1,136 @@
+.wrapper-profile-info {
+  h3 {
+    color: #332818;
+    font: 600 32px/40px sans-serif;
+    font-family: 'Parisienne', cursive;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+  }
+  .main-profile-info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background: rgba(0, 0 , 0 , 0.35);
+    padding: 30px 15px 30px 30px;
+
+    @media only screen and (max-width: 1215px) {
+      align-items: start;
+    }
+
+    @media only screen and (max-width: 1145px) {
+      flex-direction: column;
+    }
+
+    .avatar {
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 125px;
+
+      @media only screen and (max-width: 1390px) {
+        flex-grow: 1;
+      }
+
+      @media only screen and (max-width: 1215px) {
+        width: 180px;
+        height: 180px;
+      }
+
+      @media only screen and (max-width: 1145px) {
+        margin-bottom: 15px;
+      }
+
+      img {
+        width: auto;
+        max-height: 100%;
+      }
+    }
+
+    .profile-info-text {
+      margin-right: 20px;
+      flex-grow: 1;
+
+      @media only screen and (max-width: 1390px) {
+        width: calc(100% - 250px - 25px);
+      }
+
+      @media only screen and (max-width: 1215px) {
+        width: calc(100% - 180px - 25px);
+      }
+
+      @media only screen and (max-width: 1145px) {
+        width: 100%;
+      }
+
+      .profile-name {
+        font-size: 28px;
+        letter-spacing: 2px;
+        font-family: 'Knewave', cursive;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .profile-slogan {
+        font-family: 'Homemade Apple', cursive;
+        text-align: justify;
+      }
+      .profile-contacts {
+        margin-top: 20px;
+        h4 {
+          font: 500 28px/30px 'Knewave', cursive;
+          margin-bottom: 20px;
+        }
+        a {
+          margin-right: 30px;
+          &.instagram {
+            width: 70px;
+            height: 70px;
+            content: url("../images/Social Icons by Dreamstale (33).png");
+          }
+          &.facebook {
+            width: 70px;
+            height: 70px;
+            content: url("../images/Social Icons by Dreamstale (6).png");
+          }
+          &.twitter {
+            width: 70px;
+            height: 70px;
+            content: url("../images/Social Icons by Dreamstale (5).png");
+          }
+        }
+
+      }
+    }
+  }
+  .main-profile-posts {
+    h3 {
+      margin-top: 30px;
+    }
+    .post-actions {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+
+      button {
+        @include button;
+      }
+
+    }
+
+    .post-item {
+      background: rgba(0, 0 , 0 , 0.35);
+      padding: 30px;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .post-like {
+        margin-top: 10px;
+        &:before {
+          margin-right: 10px;
+        }
+
+      }
+    }
+  }
+}

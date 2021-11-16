@@ -5,6 +5,7 @@ const SETUSERS = 'SETUSERS';
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 ///uploads/posts/2019-03/1551514947_48.jpg
 ///uploads/posts/2019-03/medium/1551514037_30.jpg
@@ -12,19 +13,20 @@ const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 
 let initialState = {
     users : [
-    //     {id: 1, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514025_2.jpg', followed: false, name: 'Christopher Barker',
-    //         status: 'Before you judge me, Make sure that you’re perfect.',
-    //         location: {city: 'New York', country: 'USA' } },
-    //     {id: 2, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514049_4.jpg', followed: false, name: 'Edward Johnston',
-    //         status: 'It takes a minute to like someone, an hour to love someone, but to forget someone takes a lifetimes.',
-    //         location: {city: 'Brussels', country: 'Belgium' } },
-    //     {id: 3, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514082_8.jpeg', followed: true, name: 'Janis Phelps',
-    //         status: 'No one stays with you permanently so learn to survive alone.',
-    //         location: {city: 'Lisbon', country: 'Portugal' } },
+        // {id: 1, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514025_2.jpg', followed: false, name: 'Christopher Barker',
+        //     status: 'Before you judge me, Make sure that you’re perfect.',
+        //     location: {city: 'New York', country: 'USA' }, photos: {small: 'https://klike.net/uploads/posts/2019-03/1551514025_2.jpg'} },
+        // {id: 2, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514049_4.jpg', followed: false, name: 'Edward Johnston',
+        //     status: 'It takes a minute to like someone, an hour to love someone, but to forget someone takes a lifetimes.',
+        //     location: {city: 'Brussels', country: 'Belgium' }, photos: {small: 'https://klike.net/uploads/posts/2019-03/1551514049_4.jpg'} },
+        // {id: 3, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514082_8.jpeg', followed: true, name: 'Janis Phelps',
+        //     status: 'No one stays with you permanently so learn to survive alone.',
+        //     location: {city: 'Lisbon', country: 'Portugal' }, photos: {small: 'https://klike.net/uploads/posts/2019-03/1551514082_8.jpeg'} },
     ],
-    pageSize: 15,
+    pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: true
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -66,7 +68,8 @@ const usersReducer = (state = initialState, action) => {
         case SETUSERS: {
             return  {
                 ...state,
-                users: action.users
+                users: action.users,
+                photos: action.users.photos
             }
         }
         case SET_CURRENT_PAGE: {
@@ -81,7 +84,9 @@ const usersReducer = (state = initialState, action) => {
                 totalUsersCount: action.count
             }
         }
-
+        case TOGGLE_IS_FETCHING: {
+            return {...state, isFetching: action.isFetching}
+        }
         default:
             return state;
     }
@@ -94,5 +99,6 @@ export const setUsersAC = (users) => ({type: SETUSERS, users});
 export const toggleFollowAC = (userId) => ({type: TOGGLE_FOLLOW, userId });
 export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalUsersCountAC = (totalCount) => ({type: SET_TOTAL_COUNT, count: totalCount });
+export const setIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching })
 
 export default usersReducer;

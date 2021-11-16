@@ -1,6 +1,7 @@
 import React from "react";
-import Clock from "./Clock/Clock";
 import {NavLink} from "react-router-dom";
+import ClockContainer from "./Clock/ClockContainer";
+import CitesContainer from "./Cites/CitesContainer";
 
 const Aside = () => {
   return (
@@ -14,7 +15,11 @@ const Aside = () => {
 
           </div>
 
-          <Clock />
+          {/*<Clock />*/}
+          <ClockContainer />
+
+          <CitesContainer />
+
       </aside>
   );
 };

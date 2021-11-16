@@ -3,6 +3,8 @@
 @import "components/header";
 @import "components/clock";
 @import "components/users";
+@import "components/profile";
+@import "components/cites";
 
 
 .App-wrapper {
@@ -13,7 +15,7 @@
   grid-template-columns: 3fr 7fr;
   grid-gap: 10px;
   height: 100%;
-  background: url("https://oir.mobi/uploads/posts/2021-01/1611923805_35-p-kartinki-na-zadnii-fon-36.jpg") center no-repeat;
+  background: url("../images/1586520432_3-p-kreativnie-foni-18.jpg") center no-repeat;
   background-size: cover;
 
 }
@@ -30,9 +32,14 @@
   background: rgba(255, 255, 255, 0.6);
 
   .aside {
+    width: 25%;
     margin: 20px 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .aside-menu {
+      width: calc(100% - 40px);
       margin-bottom: 50px;
       background: rgba(0, 0 , 0 , 0.35);
       padding: 20px;
@@ -56,132 +63,40 @@
   }
 
   .wrapper-content {
+    width: calc(100% - 25% - 20px);
     margin: 20px;
-    flex-grow: 1;
+    //flex-grow: 1;
     min-height: 100vh;
     height: auto;
-    .wrapper-profile-info {
-      h3 {
-        color: #332818;
-        font: 600 32px/40px sans-serif;
-        font-family: 'Parisienne', cursive;
-        font-size: 50px;
-        text-align: center;
-        margin: 0;
-      }
-      .main-profile-info {
-        display: flex;
-        flex-direction: row-reverse;
-        background: rgba(0, 0 , 0 , 0.35);
-        padding: 30px 15px 30px 30px;
 
-        @media only screen and (max-width: 1145px) {
-          flex-direction: column;
-        }
-
-        .avatar {
-          width: 250px;
-          height: 250px;
-          overflow: hidden;
-          border-radius: 125px;
-
-          @media only screen and (max-width: 1390px) {
-            flex-grow: 1;
-          }
-
-          @media only screen and (max-width: 1215px) {
-            width: 180px;
-            height: 180px;
-          }
-
-          @media only screen and (max-width: 1145px) {
-            margin-bottom: 15px;
-          }
-
-          img {
-            width: 100%;
-            height: auto;
-          }
-        }
-
-        .profile-info-text {
-          margin-right: 20px;
-          flex-grow: 1;
-
-          @media only screen and (max-width: 1390px) {
-            width: calc(100% - 250px - 25px);
-          }
-
-          @media only screen and (max-width: 1215px) {
-            width: calc(100% - 180px - 25px);
-          }
-
-          @media only screen and (max-width: 1145px) {
-            width: 100%;
-          }
-
-          .profile-name {
-            font-size: 28px;
-            letter-spacing: 2px;
-            font-family: 'Knewave', cursive;
-            text-align: left;
-            margin-bottom: 20px;
-          }
-          .profile-slogan {
-            font-family: 'Homemade Apple', cursive;
-            text-align: justify;
-          }
-        }
-      }
-      .main-profile-posts {
-        h3 {
-          margin-top: 30px;
-        }
-        .post-actions {
-          display: flex;
-          justify-content: center;
-          margin: 25px 0;
-
-          button {
-            @include button;
-          }
-
-        }
-
-        .post-item {
-          background: rgba(0, 0 , 0 , 0.35);
-          padding: 30px;
-          margin-bottom: 20px;
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-          .post-like {
-            margin-top: 10px;
-            &:before {
-              margin-right: 10px;
-            }
-
-          }
-        }
-      }
-    }
     .dialogs-page {
       width: 100%;
       height: 100%;
       display: flex;
+      flex-direction: column;
+
       .dialogs-items {
-        width: 30%;
-        padding: 10px;
+        //width: 30%;
+        width: calc(100% - 20px);
+        padding: 20px 10px 0;
         background: rgba(0, 0 , 0 , 0.35);
+        text-align: center;
+
         .dialog {
           @include button2;
+          display: inline-block;
+          width: auto;
+          height: auto;
+          padding: 15px 25px;
+          margin-right: 25px;
         }
       }
       .messages-block {
         flex-grow: 1;
         padding: 10px;
         background: rgba(0, 0 , 0 , 0.35);
-        margin-left: 20px;
+        //margin-left: 20px;
+
         .message {
           padding: 20px;
           border: 2px solid wheat;
@@ -190,6 +105,8 @@
         }
         .new-message {
           display: flex;
+          justify-content: center;
+
           button {
             @include button;
           }

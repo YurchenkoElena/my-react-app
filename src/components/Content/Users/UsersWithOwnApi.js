@@ -4,49 +4,14 @@ import userPhoto from "./../../../images/Union.jpg"
 
 class UsersC extends React.Component {
 
-    // getUsers = () => {
-    //     if (this.props.users.length <= 3) {
-    //         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-    //             console.log(response.data.items);
-    //         });
-    //         this.props.setUsers(
-    //             [
-    //                 {id: 4, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514947_48.jpg', followed: true, fullName: 'Joseph Marshall',
-    //                     status: 'Every bullet has its bille.',
-    //                     location: {city: 'Boston', country: 'USA' } },
-    //                 {id: 5, photoUrl: 'https://klike.net/uploads/posts/2019-03/medium/1551514037_30.jpg', followed: false, fullName: 'Elisabeth Adams',
-    //                     status: 'If you can dream it, you can do it.',
-    //                     location: {city: 'Oslo', country: 'Kongeriket Norge' } },
-    //                 {id: 6, photoUrl: 'http://andrey-eltsov.ru/wp-content/uploads/2017/09/ghjunyhgfg87654kjngvd-bkmijrfd04532lkijtgr-hbedkuj73982jhbgvf-a-a-kotik-edinorozhek-edinorog-ava2ap.jpg', followed: true, fullName: 'Janis Phelps',
-    //                     status: 'To love is not to look at one another, but to look in the same direction.',
-    //                     location: {city: 'Mexico', country: 'Mexica' } },
-    //             ]
-    //         );
-    //     }
-    // }
-
     componentDidMount() {
         //alert('componentDidMount - !!!');
         if (this.props.users.length <= 3) {
-            axios.get(`http://localhost:3004/users-api?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
-                console.log(response.data.items);
-                    this.props.setUsers(response.data.items);
-                    this.props.setTotalUsersCount(response.data.totalCount);
+            axios.get(`http://localhost:3004/users-api`).then(response => {
+                let newArray = response.data.items.splice(0, 5);
+                    this.props.setUsers(newArray);
+                    this.props.setTotalUsersCount(response.data.items.length);
             });
-
-            // this.props.setUsers(
-            //     [
-            //         {id: 4, photoUrl: 'https://klike.net/uploads/posts/2019-03/1551514947_48.jpg', followed: true, name: 'Joseph Marshall',
-            //             status: 'Every bullet has its bille.',
-            //             location: {city: 'Boston', country: 'USA' } },
-            //         {id: 5, photoUrl: 'https://klike.net/uploads/posts/2019-03/medium/1551514037_30.jpg', followed: false, name: 'Elisabeth Adams',
-            //             status: 'If you can dream it, you can do it.',
-            //             location: {city: 'Oslo', country: 'Kongeriket Norge' } },
-            //         {id: 6, photoUrl: 'http://andrey-eltsov.ru/wp-content/uploads/2017/09/ghjunyhgfg87654kjngvd-bkmijrfd04532lkijtgr-hbedkuj73982jhbgvf-a-a-kotik-edinorozhek-edinorog-ava2ap.jpg', followed: true, name: 'Janis Phelps',
-            //             status: 'To love is not to look at one another, but to look in the same direction.',
-            //             location: {city: 'Mexico', country: 'Mexica' } },
-            //     ]
-            // );
         }
     }
 
@@ -55,7 +20,9 @@ class UsersC extends React.Component {
         // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
         axios.get(`http://localhost:3004/users-api?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
-                this.props.setUsers(response.data.items);
+                let page = (5 * pageNumber) - 5;
+                let newArray = response.data.items.splice(page, 5);
+                    this.props.setUsers(newArray);
             });
     }
 
