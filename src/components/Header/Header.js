@@ -21,6 +21,7 @@ const Header = () => {
                             <li><a href="/video">Video</a></li>
                             <li><a href="/friends">Friends</a></li>
                             <li><a href="/settings">Settings</a></li>
+                            <li><a href="/settings">Yulia</a></li>
                         </ul>
                     </nav>
                 </div>
